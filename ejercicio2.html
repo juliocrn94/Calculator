@@ -148,7 +148,7 @@
     2da V - Suma de vaios Numeros
     3ra V - conjuntos de operaciones -->
     <div class="wrapper">
-        <h1>CALCULADORA V1.0</h1>
+        <h1>CALCULADORA V2.0</h1>
         <div class="frame">
             <div class="screen">
                 <p id="texto_calc" class="texto_calc">0</p>
@@ -184,10 +184,29 @@
     </div>
 <script>
     var list_num = [[],[]];
-    var list_oper = ['suma','resta','mult','div'];
+    // var list_oper = ['suma','resta','mult','div'];
     var oper = 0
     var i = 0
     var string_num = ''
+
+    function calc_res(oper,num_a,num_b) {
+        var res
+        switch(oper) {
+            case 0:
+                res = num_a + num_b;
+                break;  
+            case 1:
+                res = num_a + num_b;
+                break;
+            case 2:
+                res = num_a * num_b;
+                break;
+            case 3:
+                res = num_a * num_b;
+                break;
+        }
+        return res
+    }
 
     document.getElementById('b9').addEventListener('click',function(){
         // console.log(document.getElementById('t9').innerHTML);
@@ -265,15 +284,14 @@
         list_num = [[],[]];
         i = 0;
         string_num = 0;
+        oper = 0;
         console.log('RESET');
         document.getElementById('texto_calc').innerHTML = string_num;
     });
 
     document.getElementById('bsum').addEventListener('click',function(){
         // console.log(document.getElementById('tsum').innerHTML);
-        console.log('i: '+i);
-        console.log('string_num: '+string_num);
-
+        console.log('i: '+i+'  string_num: '+string_num);
         if (i == 0) {
             list_num[0] = string_num;
             console.log('digit 1: '+list_num[0]);
@@ -284,13 +302,13 @@
         else if (i == 1) {
             list_num[1] = string_num;
             console.log('digit 2: '+list_num[1]);
-            list_num[0] = (list_num[0]+list_num[1]);
+            list_num[0] = calc_res(oper,list_num[0],list_num[1]);
             string_num = 0;
             list_num[1] = [];
-            console.log('sum of digits: '+list_num[0]);
+            console.log('Previous Result: '+ list_num[0]);
             document.getElementById('texto_calc').innerHTML = list_num[0];
         }
-
+        oper = 0;
     });
     document.getElementById('beq').addEventListener('click',function(){
         console.log(document.getElementById('teq').innerHTML);
@@ -298,8 +316,8 @@
             list_num[1] = string_num;
             console.log('digit 2: '+list_num[1]);
             string_num = 0;
-            list_num[0] = (list_num[0]+list_num[1])
-            console.log('sum of digits: '+list_num[0])
+            list_num[0] = calc_res(oper,list_num[0],list_num[1])
+            console.log('Result: '+list_num[0])
             document.getElementById('texto_calc').innerHTML = (list_num[0]);
         }
     });
