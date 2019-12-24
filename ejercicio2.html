@@ -148,7 +148,7 @@
     2da V - Suma de vaios Numeros
     3ra V - conjuntos de operaciones -->
     <div class="wrapper">
-        <h1>CALCULADORA V2.0</h1>
+        <h1>CALCULADORA V3.0</h1>
         <div class="frame">
             <div class="screen">
                 <p id="texto_calc" class="texto_calc">0</p>
@@ -175,16 +175,16 @@
                 <p id="tce" class="texto_bce">CE</p></div>
             <div id="b0" class="botton_main b0">
                 <p id="t0" class="texto_b">0</p></div>
-            <div class="botton_op bdiv"><p class="texto_b">÷</p></div>
-            <div class="botton_op bmul"><p class="texto_b">*</p></div>
-            <div class="botton_op bres"><p class="texto_b">-</p></div>
+            <div id="bdiv" class="botton_op bdiv"><p id="tdiv" class="texto_b">÷</p></div>
+            <div id="bmul" class="botton_op bmul"><p id="tmul" class="texto_b">*</p></div>
+            <div id="bres" class="botton_op bres"><p id="tres" class="texto_b">-</p></div>
             <div id="bsum" class="botton_op bsum"><p id="tsum" class="texto_b">+</p></div>
             <div id="beq" class="botton_red beq"><p id="teq" class="texto_b">=</p></div>
         </div>    
     </div>
 <script>
     var list_num = [[],[]];
-    // var list_oper = ['suma','resta','mult','div'];
+    var list_oper = ['sum','diff','mult','div'];
     var oper = 0
     var i = 0
     var string_num = ''
@@ -196,13 +196,13 @@
                 res = num_a + num_b;
                 break;  
             case 1:
-                res = num_a + num_b;
+                res = num_a - num_b;
                 break;
             case 2:
                 res = num_a * num_b;
                 break;
             case 3:
-                res = num_a * num_b;
+                res = num_a / num_b;
                 break;
         }
         return res
@@ -309,9 +309,80 @@
             document.getElementById('texto_calc').innerHTML = list_num[0];
         }
         oper = 0;
+        console.log('Next Operation: '+list_oper[oper]);
     });
+
+    document.getElementById('bres').addEventListener('click',function(){
+        // console.log(document.getElementById('tres').innerHTML);
+        console.log('i: '+i+'  string_num: '+string_num);
+        if (i == 0) {
+            list_num[0] = string_num;
+            console.log('digit 1: '+list_num[0]);
+            string_num = 0;
+            document.getElementById('texto_calc').innerHTML = string_num;
+            i += 1
+        }
+        else if (i == 1) {
+            list_num[1] = string_num;
+            console.log('digit 2: '+list_num[1]);
+            list_num[0] = calc_res(oper,list_num[0],list_num[1]);
+            string_num = 0;
+            list_num[1] = [];
+            console.log('Previous Result: '+ list_num[0]);
+            document.getElementById('texto_calc').innerHTML = list_num[0];
+        }
+        oper = 1;
+        console.log('Next Operation: '+list_oper[oper]);
+    });
+    
+    document.getElementById('bmul').addEventListener('click',function(){
+        // console.log(document.getElementById('tmul').innerHTML);
+        console.log('i: '+i+'  string_num: '+string_num);
+        if (i == 0) {
+            list_num[0] = string_num;
+            console.log('digit 1: '+list_num[0]);
+            string_num = 0;
+            document.getElementById('texto_calc').innerHTML = string_num;
+            i += 1
+        }
+        else if (i == 1) {
+            list_num[1] = string_num;
+            console.log('digit 2: '+list_num[1]);
+            list_num[0] = calc_res(oper,list_num[0],list_num[1]);
+            string_num = 0;
+            list_num[1] = [];
+            console.log('Previous Result: '+ list_num[0]);
+            document.getElementById('texto_calc').innerHTML = list_num[0];
+        }
+        oper = 1;
+        console.log('Next Operation: '+list_oper[oper]);
+    });
+
+    document.getElementById('bdiv').addEventListener('click',function(){
+        // console.log(document.getElementById('tdiv').innerHTML);
+        console.log('i: '+i+'  string_num: '+string_num);
+        if (i == 0) {
+            list_num[0] = string_num;
+            console.log('digit 1: '+list_num[0]);
+            string_num = 0;
+            document.getElementById('texto_calc').innerHTML = string_num;
+            i += 1
+        }
+        else if (i == 1) {
+            list_num[1] = string_num;
+            console.log('digit 2: '+list_num[1]);
+            list_num[0] = calc_res(oper,list_num[0],list_num[1]);
+            string_num = 0;
+            list_num[1] = [];
+            console.log('Previous Result: '+ list_num[0]);
+            document.getElementById('texto_calc').innerHTML = list_num[0];
+        }
+        oper = 1;
+        console.log('Next Operation: '+list_oper[oper]);
+    });
+
     document.getElementById('beq').addEventListener('click',function(){
-        console.log(document.getElementById('teq').innerHTML);
+        // console.log(document.getElementById('teq').innerHTML);
         if (i == 1) {
             list_num[1] = string_num;
             console.log('digit 2: '+list_num[1]);
@@ -321,7 +392,6 @@
             document.getElementById('texto_calc').innerHTML = (list_num[0]);
         }
     });
-
 
 </script>
 </body>
