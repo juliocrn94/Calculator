@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ejercicio Calculadora</title>
     <link href="https://fonts.googleapis.com/css?family=Courier+Prime:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap" rel="stylesheet">
 
     <style>
         .wrapper {
@@ -41,21 +42,31 @@
             background-color: rgb(179, 225, 93);
             margin: 10px;
             border-radius: 5px;
+            padding: 20px 5px 15px 5px;
         }
         .botton_main{
             background-color: #7c7a7a;
             margin: 10px;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .botton_op{
             background-color: #41A2C5;
             margin: 10px;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .botton_red{
             background-color: #EA5E5D;
             margin: 10px;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .b1 {
             grid-area: b1;
@@ -106,11 +117,21 @@
             grid-area: beq;
         }
         .texto_calc {
-            font-family: 'Courier Prime', monospace;
-            color: white;
+            color: #494949;
             text-align: right;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 55px;
+            align-items: flex-end;
+            margin: 0;
         }
-    
+        .texto_b {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            text-align: center;
+            margin: 0;
+            margin-top: 5px;
+        }
 
     </style>
 </head>
@@ -124,22 +145,22 @@
             <div class="screen">
                 <p class="texto_calc">8888888</p>
             </div>
-            <div class="botton_main b9"></div>
-            <div class="botton_main b8"></div>
-            <div class="botton_main b7"></div>
-            <div class="botton_main b6"></div>
-            <div class="botton_main b5"></div>
-            <div class="botton_main b4"></div>
-            <div class="botton_main b3"></div>
-            <div class="botton_main b2"></div>
-            <div class="botton_main b1"></div>
-            <div class="botton_main b0"></div>
-            <div class="botton_main bp"></div>
-            <div class="botton_op bdiv"></div>
-            <div class="botton_op bmul"></div>
-            <div class="botton_op bres"></div>
-            <div class="botton_op bsum"></div>
-            <div class="botton_red beq"></div>
+            <div class="botton_main b9"><p class="texto_b">9</p></div>
+            <div class="botton_main b8"><p class="texto_b">8</p></div>
+            <div class="botton_main b7"><p class="texto_b">7</p></div>
+            <div class="botton_main b6"><p class="texto_b">6</p></div>
+            <div class="botton_main b5"><p class="texto_b">5</p></div>
+            <div class="botton_main b4"><p class="texto_b">4</p></div>
+            <div class="botton_main b3"><p class="texto_b">3</p></div>
+            <div class="botton_main b2"><p class="texto_b">2</p></div>
+            <div class="botton_main b1"><p class="texto_b">1</p></div>
+            <div class="botton_main b0"><p class="texto_b">0</p></div>
+            <div class="botton_main bp"><p class="texto_b">·</p></div>
+            <div class="botton_op bdiv"><p class="texto_b">÷</p></div>
+            <div class="botton_op bmul"><p class="texto_b">x</p></div>
+            <div class="botton_op bres"><p class="texto_b">-</p></div>
+            <div class="botton_op bsum"><p class="texto_b">+</p></div>
+            <div class="botton_red beq"><p class="texto_b">=</p></div>
         </div>    
     </div>
 <script>
