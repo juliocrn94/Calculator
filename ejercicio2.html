@@ -9,8 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap" rel="stylesheet">
 
     <style>
+        body {
+            background-color: #67C8D1;
+        }
         .wrapper {
-            height: 90vh;
+            height: 100vh;
             width: auto;
             display: flex;
             justify-content: center;
@@ -19,7 +22,12 @@
         }
         h1 {
             font-family: 'Courier Prime', monospace;
+            font-size: 40px;
             margin: 10px 0px;
+        }
+        .credits {
+            font-family: 'Courier Prime', monospace;
+            font-size: 12px;
         }
         .frame {
             display: grid;
@@ -52,13 +60,21 @@
             align-items: center;
             justify-content: center;
         }
-        .botton_op{
+        .botton_main:active {
+            background-color: #5e5e5e;
+            margin: 12px;
+        }
+        .botton_op {
             background-color: #41A2C5;
             margin: 10px;
             border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .botton_op:active {
+            background-color: rgb(50, 127, 155);
+            margin: 12px;
         }
         .botton_red{
             background-color: #EA5E5D;
@@ -67,6 +83,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .botton_red:active{
+            background-color: rgb(182, 71, 71);
+            margin: 12px;
         }
         .b1 {
             grid-area: b1;
@@ -180,7 +200,8 @@
             <div id="bres" class="botton_op bres"><p id="tres" class="texto_b">-</p></div>
             <div id="bsum" class="botton_op bsum"><p id="tsum" class="texto_b">+</p></div>
             <div id="beq" class="botton_red beq"><p id="teq" class="texto_b">=</p></div>
-        </div>    
+        </div>
+        <div class="credits_w"><p class="credits">by juliocrn94</p></div>
     </div>
 <script>
     var list_num = [[],[]];
@@ -202,6 +223,10 @@
                 res = num_a * num_b;
                 break;
             case 3:
+                if (num_b == 0) {
+                    res = 'Sntx Error';
+                    break;
+                }
                 res = num_a / num_b;
                 break;
         }
@@ -297,7 +322,7 @@
             console.log('digit 1: '+list_num[0]);
             string_num = 0;
             document.getElementById('texto_calc').innerHTML = string_num;
-            i += 1
+            i += 1;
         }
         else if (i == 1) {
             list_num[1] = string_num;
@@ -320,7 +345,7 @@
             console.log('digit 1: '+list_num[0]);
             string_num = 0;
             document.getElementById('texto_calc').innerHTML = string_num;
-            i += 1
+            i += 1;
         }
         else if (i == 1) {
             list_num[1] = string_num;
@@ -343,7 +368,7 @@
             console.log('digit 1: '+list_num[0]);
             string_num = 0;
             document.getElementById('texto_calc').innerHTML = string_num;
-            i += 1
+            i += 1;
         }
         else if (i == 1) {
             list_num[1] = string_num;
@@ -354,7 +379,7 @@
             console.log('Previous Result: '+ list_num[0]);
             document.getElementById('texto_calc').innerHTML = list_num[0];
         }
-        oper = 1;
+        oper = 2;
         console.log('Next Operation: '+list_oper[oper]);
     });
 
@@ -366,10 +391,15 @@
             console.log('digit 1: '+list_num[0]);
             string_num = 0;
             document.getElementById('texto_calc').innerHTML = string_num;
-            i += 1
+            i += 1;
         }
         else if (i == 1) {
-            list_num[1] = string_num;
+            if (string_num != 0) {
+                list_num[1] = string_num
+            }
+            else {
+                list_num[1] = 1
+            }
             console.log('digit 2: '+list_num[1]);
             list_num[0] = calc_res(oper,list_num[0],list_num[1]);
             string_num = 0;
@@ -377,7 +407,7 @@
             console.log('Previous Result: '+ list_num[0]);
             document.getElementById('texto_calc').innerHTML = list_num[0];
         }
-        oper = 1;
+        oper = 3;
         console.log('Next Operation: '+list_oper[oper]);
     });
 
