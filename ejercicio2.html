@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio Calculadora</title>
+    <link href="https://fonts.googleapis.com/css?family=Courier+Prime:400,700&display=swap" rel="stylesheet">
+
+    <style>
+        .wrapper {
+            height: 90vh;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-family: 'Courier Prime', monospace;
+            margin: 10px 0px;
+        }
+        .frame {
+            display: grid;
+            width: 380px;
+            height: 500px;
+            background-color: #494949;
+            border-radius: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 24% 19% 19% 19% 19%;
+            grid-template-areas: 
+            "screen screen screen screen"
+            "b7 b8 b9 bdiv"
+            "b4 b5 b6 bmul"
+            "b1 b2 b3 bres"
+            "b0 bp beq bsum";
+            padding: 30px;
+        }
+        .screen {
+            grid-area: screen;
+            background-color: rgb(179, 225, 93);
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .botton_main{
+            background-color: #7c7a7a;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .botton_op{
+            background-color: #41A2C5;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .botton_red{
+            background-color: #EA5E5D;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .b1 {
+            grid-area: b1;
+        }
+        .b2 {
+            grid-area: b2;
+        }
+        .b3 {
+            grid-area: b3;
+        }
+        .b4 {
+            grid-area: b4;
+        }
+        .b5 {
+            grid-area: b5;
+        }
+        .b6 {
+            grid-area: b6;
+        }
+        .b7 {
+            grid-area: b7;
+        }
+        .b8 {
+            grid-area: b8;
+        }
+        .b9 {
+            grid-area: b9;
+        }
+        .b0 {
+            grid-area: b0;
+        }
+        .bp {
+            grid-area: bp;
+        }
+        .bdiv {
+            grid-area: bdiv;
+        }
+        .bmul {
+            grid-area: bmul;
+        }
+        .bres {
+            grid-area: bres;
+        }
+        .bsum {
+            grid-area: bsum;
+        }
+        .beq {
+            grid-area: beq;
+        }
+        .texto_calc {
+            font-family: 'Courier Prime', monospace;
+            color: white;
+            text-align: right;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <!-- 1ra V - Suma de dos Numeros
+    2da V - Suma de vaios Numeros
+    3ra V - conjuntos de operaciones -->
+    <div class="wrapper">
+        <h1>CALCULADORA V1.0</h1>
+        <div class="frame">
+            <div class="screen">
+                <p class="texto_calc">8888888</p>
+            </div>
+            <div class="botton_main b9"></div>
+            <div class="botton_main b8"></div>
+            <div class="botton_main b7"></div>
+            <div class="botton_main b6"></div>
+            <div class="botton_main b5"></div>
+            <div class="botton_main b4"></div>
+            <div class="botton_main b3"></div>
+            <div class="botton_main b2"></div>
+            <div class="botton_main b1"></div>
+            <div class="botton_main b0"></div>
+            <div class="botton_main bp"></div>
+            <div class="botton_op bdiv"></div>
+            <div class="botton_op bmul"></div>
+            <div class="botton_op bres"></div>
+            <div class="botton_op bsum"></div>
+            <div class="botton_red beq"></div>
+        </div>    
+    </div>
+<script>
+    
+</script>
+</body>
+</html>
