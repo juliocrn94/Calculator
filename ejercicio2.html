@@ -34,8 +34,8 @@
             "b7 b8 b9 bdiv"
             "b4 b5 b6 bmul"
             "b1 b2 b3 bres"
-            "b0 bp beq bsum";
-            padding: 30px;
+            "bp b0 beq bsum";
+            padding: 20px;
         }
         .screen {
             grid-area: screen;
@@ -132,6 +132,14 @@
             margin: 0;
             margin-top: 5px;
         }
+        .texto_bce {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            text-align: center;
+            margin: 0;
+            margin-top: 5px;
+        }
 
     </style>
 </head>
@@ -143,28 +151,158 @@
         <h1>CALCULADORA V1.0</h1>
         <div class="frame">
             <div class="screen">
-                <p class="texto_calc">8888888</p>
+                <p id="texto_calc" class="texto_calc">0</p>
             </div>
-            <div class="botton_main b9"><p class="texto_b">9</p></div>
-            <div class="botton_main b8"><p class="texto_b">8</p></div>
-            <div class="botton_main b7"><p class="texto_b">7</p></div>
-            <div class="botton_main b6"><p class="texto_b">6</p></div>
-            <div class="botton_main b5"><p class="texto_b">5</p></div>
-            <div class="botton_main b4"><p class="texto_b">4</p></div>
-            <div class="botton_main b3"><p class="texto_b">3</p></div>
-            <div class="botton_main b2"><p class="texto_b">2</p></div>
-            <div class="botton_main b1"><p class="texto_b">1</p></div>
-            <div class="botton_main b0"><p class="texto_b">0</p></div>
-            <div class="botton_main bp"><p class="texto_b">·</p></div>
+            <div id="b9" class="botton_main b9">
+                <p id="t9" class="texto_b">9</p></div>
+            <div id="b8" class="botton_main b8">
+                <p id="t8" class="texto_b">8</p></div>
+            <div id="b7" class="botton_main b7">
+                <p id="t7" class="texto_b">7</p></div>
+            <div id="b6" class="botton_main b6">
+                <p id="t6" class="texto_b">6</p></div>
+            <div id="b5" class="botton_main b5">
+                <p id="t5" class="texto_b">5</p></div>
+            <div id="b4" class="botton_main b4">
+                <p id="t4" class="texto_b">4</p></div>
+            <div id="b3" class="botton_main b3">
+                <p id="t3" class="texto_b">3</p></div>
+            <div id="b2" class="botton_main b2">
+                <p id="t2" class="texto_b">2</p></div>
+            <div id="b1" class="botton_main b1">
+                <p id="t1" class="texto_b">1</p></div>
+            <div id="bce" class="botton_red bp">
+                <p id="tce" class="texto_bce">CE</p></div>
+            <div id="b0" class="botton_main b0">
+                <p id="t0" class="texto_b">0</p></div>
             <div class="botton_op bdiv"><p class="texto_b">÷</p></div>
-            <div class="botton_op bmul"><p class="texto_b">x</p></div>
+            <div class="botton_op bmul"><p class="texto_b">*</p></div>
             <div class="botton_op bres"><p class="texto_b">-</p></div>
-            <div class="botton_op bsum"><p class="texto_b">+</p></div>
-            <div class="botton_red beq"><p class="texto_b">=</p></div>
+            <div id="bsum" class="botton_op bsum"><p id="tsum" class="texto_b">+</p></div>
+            <div id="beq" class="botton_red beq"><p id="teq" class="texto_b">=</p></div>
         </div>    
     </div>
 <script>
+    var list_num = [[],[]];
+    var list_oper = ['suma','resta','mult','div'];
+    var oper = 0
+    var i = 0
+    var string_num = ''
+
+    document.getElementById('b9').addEventListener('click',function(){
+        // console.log(document.getElementById('t9').innerHTML);
+        list_num[i].push(document.getElementById('t9').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b8').addEventListener('click',function(){
+        // console.log(document.getElementById('t8').innerHTML);
+        list_num[i].push(document.getElementById('t8').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b7').addEventListener('click',function(){
+        // console.log(document.getElementById('t7').innerHTML);
+        list_num[i].push(document.getElementById('t7').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b6').addEventListener('click',function(){
+        // console.log(document.getElementById('t6').innerHTML);
+        list_num[i].push(document.getElementById('t6').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b5').addEventListener('click',function(){
+        // console.log(document.getElementById('t5').innerHTML);
+        list_num[i].push(document.getElementById('t5').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b4').addEventListener('click',function(){
+        // console.log(document.getElementById('t4').innerHTML);
+        list_num[i].push(document.getElementById('t4').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b3').addEventListener('click',function(){
+        // console.log(document.getElementById('t3').innerHTML);
+        list_num[i].push(document.getElementById('t3').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b2').addEventListener('click',function(){
+        // console.log(document.getElementById('t2').innerHTML);
+        list_num[i].push(document.getElementById('t2').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b1').addEventListener('click',function(){
+        // console.log(document.getElementById('t1').innerHTML);
+        list_num[i].push(document.getElementById('t1').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+    document.getElementById('b0').addEventListener('click',function(){
+        // console.log(document.getElementById('t0').innerHTML);
+        list_num[i].push(document.getElementById('t0').innerHTML);
+        string_num = Number(list_num[i].join(''));
+        console.log(string_num);
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
     
+    document.getElementById('bce').addEventListener('click',function(){
+        console.log(document.getElementById('t0').innerHTML);
+        list_num = [[],[]];
+        i = 0;
+        string_num = 0;
+        console.log('RESET');
+        document.getElementById('texto_calc').innerHTML = string_num;
+    });
+
+    document.getElementById('bsum').addEventListener('click',function(){
+        // console.log(document.getElementById('tsum').innerHTML);
+        console.log('i: '+i);
+        console.log('string_num: '+string_num);
+
+        if (i == 0) {
+            list_num[0] = string_num;
+            console.log('digit 1: '+list_num[0]);
+            string_num = 0;
+            document.getElementById('texto_calc').innerHTML = string_num;
+            i += 1
+        }
+        else if (i == 1) {
+            list_num[1] = string_num;
+            console.log('digit 2: '+list_num[1]);
+            string_num = 0;
+            console.log('sum of digits: '+(list_num[0]+list_num[1]))
+            document.getElementById('texto_calc').innerHTML = (list_num[0]+list_num[1]);
+        }
+
+    });
+    document.getElementById('beq').addEventListener('click',function(){
+        console.log(document.getElementById('teq').innerHTML);
+        if (i == 1) {
+            list_num[1] = string_num;
+            console.log('digit 2: '+list_num[1]);
+            // string_num = 0;
+            list_num[0] = (list_num[0]+list_num[1])
+            console.log('sum of digits: '+list_num[0])
+            document.getElementById('texto_calc').innerHTML = (list_num[0]);
+        }
+    });
+
+
 </script>
 </body>
 </html>
