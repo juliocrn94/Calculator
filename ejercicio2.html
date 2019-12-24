@@ -284,9 +284,11 @@
         else if (i == 1) {
             list_num[1] = string_num;
             console.log('digit 2: '+list_num[1]);
+            list_num[0] = (list_num[0]+list_num[1]);
             string_num = 0;
-            console.log('sum of digits: '+(list_num[0]+list_num[1]))
-            document.getElementById('texto_calc').innerHTML = (list_num[0]+list_num[1]);
+            list_num[1] = [];
+            console.log('sum of digits: '+list_num[0]);
+            document.getElementById('texto_calc').innerHTML = list_num[0];
         }
 
     });
@@ -295,7 +297,7 @@
         if (i == 1) {
             list_num[1] = string_num;
             console.log('digit 2: '+list_num[1]);
-            // string_num = 0;
+            string_num = 0;
             list_num[0] = (list_num[0]+list_num[1])
             console.log('sum of digits: '+list_num[0])
             document.getElementById('texto_calc').innerHTML = (list_num[0]);
